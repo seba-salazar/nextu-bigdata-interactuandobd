@@ -11,7 +11,7 @@ Luego hay que ejecutar el servicio de NODE por medio del terminal, entramos a la
 node index.js
 
 Nos aparecerá el mensaje:
-Server is listening on port: 3000
+Servidor escuchando por el puerto: 3000
 Conectado a MongoDB
 
 Abrimos el navegador y escribimos:

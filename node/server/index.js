@@ -1,9 +1,3 @@
-/********************************************************************************/
-/*****************************   Antes de iniciar   *****************************/
-/********** Leer el archivo index.html en la carpeta raiz del proyecto **********/
-/********************************************************************************/
-/********************************************************************************/
-
 const http = require('http'); //requerir el módulo http
       path = require('path'), //requiere el modulo path para trabajar con directorios
       express = require('express'), //permite el enrutamiento de peticiones.
@@ -43,5 +37,5 @@ app.use('/usuarios', RoutingUsers) //Incluir el módulo usuarios y definir su di
 app.use('/events', RoutingEvents) //Incluir el módulo eventos bajo y definir su directorio raíz como /events
 
 Server.listen(PORT, function() { //Iniciar el servidor
-  console.log('Server is listening on port: ' + PORT) //Mostrar mensaje de inicialización del servidor en la cónsola.
+  console.log('Servidor escuchando por el puerto: ' + PORT) //Mostrar mensaje de inicialización del servidor en la cónsola.
 })
