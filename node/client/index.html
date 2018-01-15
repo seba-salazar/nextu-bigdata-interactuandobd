@@ -9,6 +9,11 @@
   <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Neucha" rel="stylesheet">
 </head>
+<style>
+p{
+  color: white;
+}
+</style>
 <body>
   <div class="loginContainer">
     <div class="loginTitle">Inicio de Sesión</div>
@@ -17,7 +22,9 @@
       <input type="password" id="pass" placeholder="Contraseña..." />
       <button id="login" class="loginButton">Ingresar</button>
       <div id="message" style="display:none"></div>
+      <p>Utilizar los siguientes usuarios: </br>usuario:seba password:123456 </br>usuario:dani password:123456</p>
     </div>
+
   </div>
   <script src="js/jquery.js"></script>
   <script src="js/jquery-ui.min.js"></script>
@@ -26,18 +33,6 @@
     $('#message').show('fold').html('<p>'+response+'</p>')
   }
 
-  verificarUsuarioDemo(); //Funcion para verificar si existe el usuario demo
-
-  function verificarUsuarioDemo() {
-    $.ajax({
-      url: '/usuarios/demo',
-      method: 'GET',
-      data: {user:'demo'},
-      success: function(response) {
-        showMessage(response)
-      }
-    })
-  }
 
   var nombreUsuario = $('#user')
   var pass = $('#pass')

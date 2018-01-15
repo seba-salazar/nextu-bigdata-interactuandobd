@@ -2,33 +2,7 @@ const Router = require('express').Router();
 const Usuarios = require('./modelUsuarios.js')
 const Eventos = require('./modelEventos.js')
 const Operaciones = require('./crud.js')
-//Verificar si existe el usuario DEMO
-Router.get('/demo', function(req, res) {
-  Usuarios.find({user: req.query.user}).count({}, function(err, count) { //Verificar si exste el usuario DEMO
-    if(count>0){ //Si el registro es mayor a 0
-        res.send("Utilice los siguientes datos: </br>usuario:seba password:123456 </br>usuario:dani password:123456") //Mostrra mensaje con los datos de los usuarios predeterminados
-    }else{
-      Eventos.find({}).count({}, function(err, count) { //Si no existen usuarios en la base de datos Verificar que no exista ningún evento creado en la base de datos
-        if(count>0){ //Si existen eventos
-          Eventos.remove({},function(err, doc){ //Vaciar la tabla eventos
-          if(err){
-            console.log(err)
-          }else{
-            console.log("Información de eventos reinicializada") //Mostrar mensaje en cónsola
-          }
-        })
-      }
-    })
-      Operaciones.crearUsuarioDemo((error, result) => { //Si no , llamar la función crearUsuarioDemo en el modelo modelUsuarios.js
-        if(error){
-          res.send(error) //Enviar mensaje de error
-        }else{
-          res.send(result) //Enviar mensaje de resultado
-        }
-      })
-    }
-  })
-})
+
 
 //Validar formulario de inicio de sesion
 Router.post('/login', function(req, res) {
