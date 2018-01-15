@@ -1,2 +1,4 @@
-Link del proyecto en GitHub:
+
+En el link se encuentran los 2 proyectos... PHP y NODE
+
 https://github.com/seba-salazar/nextu-bigdata-interactuandobd
